@@ -5,15 +5,14 @@ body {
     padding: 0px;
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(to bottom right, rgb(235, 175, 175), rgba(68, 0, 255, 0.397));
 }
 
 .main {
     /* border: red 2px solid; */
     width: 80%;
-}
-
-.header {
-    /* border: yellow 2px solid; */
+    background-color: white;
+    padding: 6px;
 }
 
 .unit {
@@ -24,7 +23,7 @@ body {
 }
 
 .path {
-    /* border: black solid 2px; */
+    border-bottom: rgba(69, 69, 70, 0.3) solid 2px;
 }
 
 .Introduction {
@@ -47,4 +46,13 @@ body {
     height: 25px;
     margin: 5px;
     border-radius: 5px;
+}
+
+h2 {
+    font-size: 29px;
+}
+
+h2 a {
+    font-size: 29px;
+    margin: 6px;
 }
