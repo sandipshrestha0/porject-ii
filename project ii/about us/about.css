@@ -1,0 +1,50 @@
+body {
+    /* border: green solid 2px; */
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    /* border: red 2px solid; */
+    width: 80%;
+}
+
+.header {
+    /* border: yellow 2px solid; */
+}
+
+.unit {
+    text-align: center;
+    padding: 1px;
+    /* border: gray solid 2px; */
+    background-color: rgba(69, 69, 70, 0.3);
+}
+
+.path {
+    /* border: black solid 2px; */
+}
+
+.Introduction {
+    text-align: center;
+    border-bottom: 2px solid slategray;
+}
+
+.programs ul li {
+    list-style: none;
+    text-align: center;
+}
+
+.programs ul li a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(27, 75, 154);
+    width: 90%;
+    height: 25px;
+    margin: 5px;
+    border-radius: 5px;
+}
