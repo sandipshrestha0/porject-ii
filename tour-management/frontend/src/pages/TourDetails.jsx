@@ -16,8 +16,8 @@ const TourDetails = () => {
   const reviewMsgRef = useRef('')
   const [tourRating, setTourRating] = useState(null)
   
- //fetch data ffrom db
- const {data:tour} = useFetch(`${BASE_URL}/tours/${id}`)
+ //fetch data from db
+ const {data:tour, loading, error} = useFetch(`${BASE_URL}/tours/${id}`)
 
 console.log(id);
   // destrucure propeties from tour object
@@ -48,14 +48,18 @@ console.log(id);
 
   useEffect(()=>{
     window.scrollTo(0,0)
-  },[])
+  },[tour])
 
   return (
     <>
     
     <section>
       <Container>
-        <Row>
+        { loading && <h4 className='text-center pt-5'>Loadding.....</h4>}
+        {error && <h4 className='text-center pt-5 '>{error}</h4>}
+
+        {
+          !loading && !error &&  <Row>
           <Col lg ='8'>
           <div className="tour__content">
             <img src={photo} alt="" />
@@ -67,7 +71,7 @@ console.log(id);
                 {avgRating === 0 ? null : avgRating }
                 {totalRating === 0 ? 
                 ('Not rated')  :(
-                <span>({reviews.length})</span> )}
+                <span>({reviews?.length})</span> )}
               </span>
               <span>
                 <i className='ri-map-pin-user-fill'></i> {address}
@@ -143,6 +147,7 @@ console.log(id);
                   <Booking tour={tour} avgRating={avgRating}/>
           </Col>
         </Row>
+        }
       </Container>
     </section>
     <Newsletter/>
