@@ -26,7 +26,7 @@ const connect = async()=> {
                 useNewUrlParser:true,
                 useUnifiedTopology:true
             } ) 
-            console.log("databse conneccted")
+            console.log("databse connected")
     }
     catch (err) {
         console.log(err)
