@@ -58,7 +58,7 @@ console.log(id);
         rating: tourRating
       }
 
-      const res = await fetch(`${BASE_URL}/review/${id}`, {
+      const res = await fetch(`${BASE_URL}/reviews/${id}`, {
         method: 'post',
         headers: {
             'content-type':'application/json'
@@ -72,6 +72,7 @@ console.log(id);
       }
       
       alert(result.message)
+      console.log(result.message);
     }
     catch (err) {
       alert(err.message)
@@ -160,7 +161,7 @@ console.log(id);
                             <h5>{review.username}</h5>
                             <p>
                               {
-                              new Date('06/02/2023').toLocaleDateString("en-US", options)
+                              new Date(review.createdAt).toLocaleDateString("en-US", options)
                               }
                             </p>
                           </div>
