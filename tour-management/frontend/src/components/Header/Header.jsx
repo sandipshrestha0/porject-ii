@@ -31,6 +31,7 @@ const headerRef = useRef(null)
 const navigate = useNavigate()
 const {user, dispatch} = useContext(AuthContext)
 
+
 const logout = () => {
   dispatch({type:'LOGOUT'})
   navigate('/')
@@ -88,6 +89,7 @@ useEffect(()=> {
           
           <div className="nav__right d-flex align-items-center gap-4">
             <div className="nav__btns d-flex align-items-center gap-4">
+              
 
             {user? (
               <>
