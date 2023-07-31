@@ -22,6 +22,7 @@ const Booking = ({tour, avgRating}) => {
         guestSize:1,
         bookAt:''
     })
+    
 
     const handleChange = e=> {
         setBooking(prev=>({...prev, [e.target.id]:e.target.value}))
@@ -34,7 +35,7 @@ const Booking = ({tour, avgRating}) => {
     const handleClick = async e => {
         e.preventDefault()
 
-        console.log(booking)
+        console.log(booking);
 
         try {
             if(!user || user === undefined || user === null)
@@ -46,6 +47,8 @@ const Booking = ({tour, avgRating}) => {
                 headers:{
                     'content-type':'application/json'
                 },
+                credentials:'include',
+                body: JSON.stringify(booking)
             })
             
             const result = await res.json()
