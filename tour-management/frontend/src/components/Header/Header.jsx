@@ -28,6 +28,7 @@ const nav__links = [
 const Header = () => {
 
 const headerRef = useRef(null)
+const menuRef = useRef(null)
 const navigate = useNavigate()
 const {user, dispatch} = useContext(AuthContext)
 
@@ -54,6 +55,8 @@ useEffect(()=> {
 })
 
 
+const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
+
   return <header className="header" ref={headerRef}>
     <Container>
       <Row>
@@ -67,24 +70,27 @@ useEffect(()=> {
           {/*=========== logo end ============== */}
 
           {/*=========== menu start ============== */}
-          <ul className="menu d-flex align-items-center gap-5" >
-            {
-              nav__links.map((item, index) =>
-              ( <li className='nav__item' key={index}>
-                <NavLink to={item.path} className={navClass=> 
-                  navClass.isActive ? 'active__link' : " "
-                  }
-                  >
-                    {item.display}
-                </NavLink>
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
 
-              </li>
+            <ul className="menu d-flex align-items-center gap-5" >
+              {
+                nav__links.map((item, index) =>
+                ( <li className='nav__item' key={index}>
+                  <NavLink to={item.path} className={navClass=> 
+                    navClass.isActive ? 'active__link' : " "
+                    }
+                    >
+                      {item.display}
+                  </NavLink>
+
+                </li>
+                  )
                 )
-              )
-            }
-            
+              }
+              
 
-          </ul>
+            </ul>
+          </div>
           {/*=========== menu end ============== */}
           
           <div className="nav__right d-flex align-items-center gap-4">
@@ -114,7 +120,7 @@ useEffect(()=> {
 
              
              </div>
-            <span className="mobile__menu">
+            <span className="mobile__menu" onClick={toggleMenu}>
               <i className="ri-menu-line"></i>
             </span>
           </div>
