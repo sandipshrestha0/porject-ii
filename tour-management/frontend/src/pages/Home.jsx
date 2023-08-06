@@ -98,7 +98,7 @@ const Home = () => {
 
 
   {/*============= experience section start =============== */}
-    <section>
+    {/* <section>
       <Row>
         <Col lg='6'> 
         <div className="experience__content">
@@ -136,7 +136,7 @@ const Home = () => {
           <img src={experieceImg} alt="" /></div>     </Col>
       </Row>
     </section>
-  {/*============= experience section start =============== */}
+  ============= experience section start =============== */}
 
 
   {/*============= gallery section start =============== */}
